@@ -6,3 +6,33 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+// GENERAL RULES
+footer {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+
+// HEADER
+header {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button a {
+        color: #fff;
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
+// MAIN
+main {
+    h2 {
+        text-align: center;
+        padding: 1em;
+    }
+}

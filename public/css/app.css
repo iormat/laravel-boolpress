@@ -10962,3 +10962,28 @@ a.text-dark:focus {
   }
 }
 
+footer {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+header {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header button a {
+  color: #fff;
+}
+
+header button a:hover {
+  color: #fff;
+}
+
+main h2 {
+  text-align: center;
+  padding: 1em;
+}
+
