@@ -3,10 +3,10 @@
     <div class="user">
         @auth
             <span>
-                {{-- {{Auth::user -> name}} --}}
+                {{Auth::user() -> name}}
             </span>
             <button class="btn btn-danger">
-                <a href="">Logout</a>
+                <a href="{{ route('logout') }}">Logout</a>
             </button>
         @endauth
     </div>

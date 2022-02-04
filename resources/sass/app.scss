@@ -21,6 +21,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    span {
+        margin-right: 2rem;
+    }
     button a {
         color: #fff;
         &:hover {

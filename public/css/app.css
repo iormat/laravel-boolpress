@@ -10974,6 +10974,10 @@ header {
   align-items: center;
 }
 
+header span {
+  margin-right: 2rem;
+}
+
 header button a {
   color: #fff;
 }
