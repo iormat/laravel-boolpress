@@ -10978,11 +10978,17 @@ header span {
   margin-right: 2rem;
 }
 
-header button a {
-  color: #fff;
+header button#logout {
+  padding: 0;
 }
 
-header button a:hover {
+header button#logout a {
+  color: #fff;
+  display: block;
+  padding: 0.5em 0.75em;
+}
+
+header button#logout a:hover {
   color: #fff;
 }
 
