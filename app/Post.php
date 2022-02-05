@@ -10,6 +10,7 @@ class Post extends Model
     protected $fillable = [
         'title',
         'subtitle',
+        'profile_pic',
         'author',
         'publish_date',
         'post_image',

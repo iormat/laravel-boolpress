@@ -10962,6 +10962,16 @@ a.text-dark:focus {
   }
 }
 
+::-moz-selection {
+  color: #F8FAFC;
+  background-color: #8b0000;
+}
+
+::selection {
+  color: #F8FAFC;
+  background-color: #8b0000;
+}
+
 footer {
   padding: 2rem 0;
   text-align: center;
@@ -10995,5 +11005,43 @@ header button#logout a:hover {
 main h2 {
   text-align: center;
   padding: 1em;
+}
+
+main #posts {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-auto-columns: minmax(40ch, 50%);
+  justify-content: center;
+  row-gap: 2rem;
+}
+
+main #posts .post {
+  padding: 2em;
+  border: 1px solid #a1a1a1;
+}
+
+main #posts .post .article-header span {
+  font-size: 0.7rem;
+}
+
+main #posts .post .article-header .user-img {
+  margin-bottom: 2em;
+  display: flex;
+  align-items: center;
+}
+
+main #posts .post .article-header .user-img img {
+  width: 15%;
+  margin-right: 5%;
+  min-width: 80px;
+  border: 1px solid #a1a1a1;
+  border-radius: 50%;
+}
+
+main #posts .post .article-body img {
+  border: 1px solid #a1a1a1;
+  width: 100%;
+  margin-bottom: 2em;
 }
 

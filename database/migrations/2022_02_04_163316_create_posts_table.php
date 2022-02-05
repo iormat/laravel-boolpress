@@ -17,10 +17,11 @@ class CreatePostsTable extends Migration
             $table -> id();
             $table -> string('title', 60);
             $table -> string('subtitle', 60) -> nullable();
+            $table -> string('profile_pic') -> nullable();
             $table -> string('author', 60);
             $table -> date('publish_date');
             $table -> string('post_image') -> nullable();
-            $table -> text('content', 500);
+            $table -> text('content', 200);
         });
     }
 
