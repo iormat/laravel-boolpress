@@ -8,6 +8,7 @@ class Post extends Model
 {
     public $timestamps = false;
     protected $fillable = [
+        'category_id',
         'title',
         'subtitle',
         'profile_pic',
@@ -16,4 +17,8 @@ class Post extends Model
         'post_image',
         'content'
     ];
+
+    public function category() {
+        return $this -> belongsTo(Category::class);
+    }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Post;
+use App\Category;
 
 class HomeController extends Controller
 {
@@ -20,7 +21,8 @@ class HomeController extends Controller
     }
 
     public function create() {
-        return view('new.pages.create');
+        $categories = Category::all();
+        return view('new.pages.create', compact('categories'));
     }
 
     public function store(Request $request) {
@@ -29,13 +31,19 @@ class HomeController extends Controller
             'subtitle' => 'nullable|string|max:60',
             'content' => 'nullable|string|max:200'
         ]);
+
         // get current user
         $data['author'] = Auth::user() -> name;
         // get current date
         $publishDate = Carbon::now();
         $data['publish_date'] = $publishDate -> toDateString();
+
         // create new post
-        $post = Post::create($data);
+        $category = Category::findOrFail($request -> get('categories'));
+        $post = Post::make($data);
+
+        $post -> category() -> associate($category);
+        $post -> save();
         return redirect() -> route('posts');
     }
 

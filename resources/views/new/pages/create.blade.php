@@ -5,6 +5,14 @@
         <form action="{{route('store')}}" id="user-post" method="POST">
             @method('POST')
             @csrf
+            {{-- create - category --}}
+            <div class="select-option">
+                <select name="categories">
+                    @foreach ($categories as $category)
+                        <option value="{{ $category -> id }}">{{ $category -> name }}</option>
+                    @endforeach
+                </select>
+            </div>
             {{-- create - title --}}
             <div class="form-group row">
                 <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('Title') }}</label>

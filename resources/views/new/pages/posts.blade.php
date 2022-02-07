@@ -14,7 +14,7 @@
             </div>
         </div>
         <section id="posts">
-            @foreach ($posts as $post)
+            @foreach ($data['posts'] as $post)
                 <article class="post">
                     <div class="article-header">
                         <div class="user-img">
@@ -39,6 +39,7 @@
                         @endif
                         <p>{{ $post -> content }}</p>
                     </div>
+                    <span>Category: {{$post -> category -> name}}</span>
                 </article>
             @endforeach
         </section>

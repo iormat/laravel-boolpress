@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Category;
 
 class GuestController extends Controller
 {
@@ -12,8 +13,10 @@ class GuestController extends Controller
     }
 
     public function posts() {
-
-        $posts = Post::all();
-        return view('new.pages.posts', compact('posts'));
+        $data = [
+            'posts' => $posts = Post::all(),
+            'categories' => $categories = Category::all(),
+        ];
+        return view('new.pages.posts', compact('data'));
     }
 }
