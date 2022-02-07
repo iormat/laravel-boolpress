@@ -101,6 +101,7 @@
         {{-- auth section --}}
         @auth
             <h2>Thank you for logging in {{Auth::user() -> name}}</h2>
+            <h3><a href="{{route('posts')}}">Go to posts</a></h3>
         @endauth
     </div>
 @endsection

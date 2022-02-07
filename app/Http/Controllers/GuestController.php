@@ -14,7 +14,6 @@ class GuestController extends Controller
     public function posts() {
 
         $posts = Post::all();
-
         return view('new.pages.posts', compact('posts'));
     }
 }

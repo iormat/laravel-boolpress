@@ -11007,6 +11007,22 @@ main h2 {
   padding: 1em;
 }
 
+main .create {
+  text-align: center;
+}
+
+main .create button a {
+  color: #F8FAFC;
+}
+
+main .create button a:hover {
+  color: #F8FAFC;
+}
+
+main .unlogged {
+  text-align: center;
+}
+
 main #posts {
   width: 80%;
   margin: 0 auto;
@@ -11033,6 +11049,9 @@ main #posts .post .article-header .user-img {
 
 main #posts .post .article-header .user-img img {
   width: 15%;
+  aspect-ratio: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-right: 5%;
   min-width: 80px;
   border: 1px solid #a1a1a1;
