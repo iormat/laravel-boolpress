@@ -10,7 +10,7 @@
             </button>
         </div>
         <section id="posts">
-            @foreach ($data['posts'] as $post)
+            @foreach ($posts as $post)
                 <article class="post">
                     <div class="article-header">
                         <div class="user-img">
@@ -36,6 +36,14 @@
                         <p>{{ $post -> content }}</p>
                     </div>
                     <span>Category: {{$post -> category -> name}}</span>
+                    <div class="article-footer">
+                        <h4>Tags&colon;</h4>
+                        <p>
+                            @foreach ($post -> tags as $tag)
+                                {{$tag -> tag_name}}
+                            @endforeach
+                        </p>
+                    </div>
                 </article>
             @endforeach
         </section>

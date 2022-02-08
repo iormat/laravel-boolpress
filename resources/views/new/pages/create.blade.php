@@ -14,6 +14,12 @@
                     @endforeach
                 </select>
             </div>
+            {{-- create - tag --}}
+            <div class="tag-options">
+                @foreach ($tags as $tag)
+                    <input type="checkbox" name="tags[]" value="{{$tag -> id}}"> {{$tag -> tag_name}}
+                @endforeach
+            </div>
             {{-- create - title --}}
             <div class="form-group row">
                 <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('Title') }}</label>

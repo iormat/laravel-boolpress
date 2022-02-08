@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Post;
 use App\Category;
+use App\Tag;
 
 class HomeController extends Controller
 {
@@ -22,7 +23,8 @@ class HomeController extends Controller
 
     public function create() {
         $categories = Category::all();
-        return view('new.pages.create', compact('categories'));
+        $tags = Tag::all();
+        return view('new.pages.create', compact('categories', 'tags'));
     }
 
     public function store(Request $request) {
@@ -38,11 +40,17 @@ class HomeController extends Controller
         $publishDate = Carbon::now();
         $data['publish_date'] = $publishDate -> toDateString();
 
-        // create new post
-        $category = Category::findOrFail($request -> get('categories'));
         $post = Post::make($data);
 
+        // create new post
+        $category = Category::findOrFail($request -> get('categories'));
         $post -> category() -> associate($category);
+        $post -> save();
+
+        // get tag value
+        $tag = Tag::findOrFail($request -> get('tags'));
+        $post -> tags() -> attach($tag);
+
         $post -> save();
         return redirect() -> route('posts');
     }

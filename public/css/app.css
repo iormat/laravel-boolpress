@@ -11036,6 +11036,11 @@ main .create button a:hover {
   color: #F8FAFC;
 }
 
+main .tag-options {
+  text-align: center;
+  margin: 2rem 0;
+}
+
 main .unlogged {
   text-align: center;
 }
