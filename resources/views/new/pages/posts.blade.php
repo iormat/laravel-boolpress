@@ -3,15 +3,11 @@
     <h2> All Posts </h2>
     @auth
         <div class="create">
-            <div class="row mb-4 justify-content-center">
-                <div class="col-2">
-                    <button class="btn btn-primary">
-                        <a href="{{route('create')}}">
-                            Create a new post
-                        </a>
-                    </button>
-                </div>
-            </div>
+            <button class="btn btn-primary">
+                <a href="{{route('create')}}">
+                    Create a new post
+                </a>
+            </button>
         </div>
         <section id="posts">
             @foreach ($data['posts'] as $post)

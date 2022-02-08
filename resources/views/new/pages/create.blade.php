@@ -7,7 +7,8 @@
             @csrf
             {{-- create - category --}}
             <div class="select-option">
-                <select name="categories">
+                <select name="categories" required>
+                    <option selected disabled> Scegli una categoria </option>
                     @foreach ($categories as $category)
                         <option value="{{ $category -> id }}">{{ $category -> name }}</option>
                     @endforeach

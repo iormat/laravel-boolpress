@@ -14,6 +14,11 @@
     background-color: #8b0000;
 }
 
+html {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
 footer {
     padding: 2rem 0;
     text-align: center;
@@ -26,6 +31,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 
     span {
         margin-right: 2rem;
@@ -43,16 +49,26 @@ header {
     }
 }
 
+@media screen and(max-width: 376px) {
+    header {
+        justify-content: center;
+    }
+}
+
 // MAIN
 main {
     h2 {
         text-align: center;
         padding: 1em;
     }
+    .authenticated {
+        text-align: center;
+    }
 
     //  posts
     .create {
         text-align: center;
+        margin: 2rem 0;
         button {
             a {
                 color: #F8FAFC;
@@ -68,17 +84,20 @@ main {
     }
 
     #posts {
-        width: 80%;
+        width: 50%;
         margin: 0 auto;
         display: grid;
-        grid-auto-columns: minmax(40ch, 50%);
+        grid-auto-columns: minmax(35ch, 100%);
         justify-content: center;
         row-gap: 2rem;
         .post {
             padding: 2em;
             border: 1px solid #a1a1a1;
             .article-header {
-                span {
+                h3 {
+                    margin: 0;
+                }
+                .post-info {
                     font-size: .7rem;
                 }
                 .user-img {

@@ -100,8 +100,10 @@
         @endguest
         {{-- auth section --}}
         @auth
+        <section class="authenticated">
             <h2>Thank you for logging in {{Auth::user() -> name}}</h2>
             <h3><a href="{{route('posts')}}">Go to posts</a></h3>
+        </section>
         @endauth
     </div>
 @endsection

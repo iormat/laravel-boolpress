@@ -14,7 +14,7 @@ class GuestController extends Controller
 
     public function posts() {
         $data = [
-            'posts' => $posts = Post::all(),
+            'posts' => $posts = Post::orderBy('publish_date', 'DESC') -> get(),
             'categories' => $categories = Category::all(),
         ];
         return view('new.pages.posts', compact('data'));
