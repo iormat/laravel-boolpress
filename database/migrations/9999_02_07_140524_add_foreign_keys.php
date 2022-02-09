@@ -27,7 +27,6 @@ class AddForeignKeys extends Migration
             $table -> foreign('tag_id', 'tag_id_post')
                 -> references('id')
                 -> on('tags');
-
         });
     }
 

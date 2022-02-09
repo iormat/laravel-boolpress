@@ -35,7 +35,10 @@
                         @endif
                         <p>{{ $post -> content }}</p>
                     </div>
-                    <span>Category: {{$post -> category -> name}}</span>
+                    <div class="categories">
+                        <h4>Category&colon; </h4>
+                        <p>{{$post -> category -> name}}</p>
+                    </div>
                     <div class="article-footer">
                         <h4>Tags&colon;</h4>
                         <p>
@@ -43,6 +46,11 @@
                                 {{$tag -> tag_name}}
                             @endforeach
                         </p>
+                    </div>
+                    <div class="edit">
+                        <button class="btn btn-secondary">
+                            <a href="{{ route('edit', $post -> id) }}">Edit</a>
+                        </button>
                     </div>
                 </article>
             @endforeach

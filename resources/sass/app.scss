@@ -66,6 +66,8 @@ main {
     }
 
     //  posts
+
+    // create
     .create {
         text-align: center;
         margin: 2rem 0;
@@ -78,15 +80,18 @@ main {
             }
         }
     }
+
     .tag-options {
         text-align: center;
         margin: 2rem 0;
     }
 
+
     .unlogged {
         text-align: center;
     }
 
+    // all posts
     #posts {
         width: 50%;
         margin: 0 auto;
