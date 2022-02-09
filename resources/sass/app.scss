@@ -24,6 +24,13 @@ footer {
     text-align: center;
 }
 
+button.btn{
+    padding: 0;
+    a {
+        display: block;
+        padding: .5em .75em;
+    }
+}
 
 // HEADER
 header {
@@ -65,7 +72,7 @@ main {
         text-align: center;
     }
 
-    //  posts
+    //  POSTS
 
     // create
     .create {
@@ -124,11 +131,22 @@ main {
                     }
                 }
             }
+
             .article-body {
                 img {
                     border: 1px solid #a1a1a1;
                     width: 100%;
                     margin-bottom: 2em;
+                }
+            }
+
+            .edit {
+                text-align: right;
+                button {
+                    min-width: 10ch;
+                    a {
+                        color: #F8FAFC;
+                    }
                 }
             }
         }
@@ -138,5 +156,13 @@ main {
         text-align: center;
         margin: 2rem 0;
     }
+}
 
+#edit_post {
+    form {
+        button.btn{
+            min-width: 10ch;
+            padding: .5em .75em;
+        }
+    }
 }

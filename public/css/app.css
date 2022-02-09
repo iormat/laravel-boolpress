@@ -10982,6 +10982,15 @@ footer {
   text-align: center;
 }
 
+button.btn {
+  padding: 0;
+}
+
+button.btn a {
+  display: block;
+  padding: 0.5em 0.75em;
+}
+
 header {
   padding: 2rem;
   display: flex;
@@ -11090,8 +11099,25 @@ main #posts .post .article-body img {
   margin-bottom: 2em;
 }
 
+main #posts .post .edit {
+  text-align: right;
+}
+
+main #posts .post .edit button {
+  min-width: 10ch;
+}
+
+main #posts .post .edit button a {
+  color: #F8FAFC;
+}
+
 main .select-option {
   text-align: center;
   margin: 2rem 0;
+}
+
+#edit_post form button.btn {
+  min-width: 10ch;
+  padding: 0.5em 0.75em;
 }
 

@@ -1,8 +1,8 @@
 @extends('new.layouts.main-layout')
 @section('content')
-    <section id="new_post">
+    <section id="edit_post">
         <h2>Edit new Post</h2>
-        <form action="{{route('update', $post -> id)}}" id="user-post" method="POST">
+        <form action="{{route('update', $post -> id)}}" id="user-edit" method="POST">
             @method('POST')
             @csrf
             {{-- Edit - category --}}
@@ -76,7 +76,7 @@
             {{-- Edit - submit button --}}
             <div class="form-group row mb-0">
                 <div class="col-md-6 offset-md-4">
-                    <button form="user-post" type="submit" class="btn btn-primary">
+                    <button form="user-edit" type="submit" class="btn btn-primary">
                         {{ __('Edit') }}
                     </button>
                 </div>

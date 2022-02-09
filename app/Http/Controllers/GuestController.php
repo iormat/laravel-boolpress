@@ -41,14 +41,14 @@ class GuestController extends Controller
         $data['publish_date'] = $publishDate -> toDateString();
         $post = Post::make($data);
 
-        // create new post
+        // associate category to post
         $category = Category::findOrFail($request -> get('categories'));
         $post -> category() -> associate($category);
         $post -> save();
 
         // get tag value
-        $tag = Tag::findOrFail($request -> get('tags'));
-        $post -> tags() -> attach($tag);
+        $tags = Tag::findOrFail($request -> get('tags'));
+        $post -> tags() -> attach($tags);
 
         $post -> save();
         return redirect() -> route('posts');
@@ -68,27 +68,24 @@ class GuestController extends Controller
             'subtitle' => 'nullable|string|max:60',
             'content' => 'nullable|string|max:200'
         ]);
-
         $data['author'] = Post::findOrFail($id) -> author;
-        // get current date
-        $publishDate = Carbon::now();
-        $data['publish_date'] = $publishDate -> toDateString();
+        $data['publish_date'] = Post::findOrFail($id) -> publish_date;
 
+        // update data
         $post = Post::findOrFail($id);
-        $post = Post::make($data);
+        $post -> update($data);
 
-        // create new post
+        // associate category to post
         $category = Category::findOrFail($request -> get('categories'));
         $post -> category() -> associate($category);
         $post -> save();
 
         // get tag value
-        $tag = Tag::findOrFail($request -> get('tags'));
-        $post -> tags() -> sync($tag);
+        $tags = Tag::find($request -> get('tags'));
+        $post -> tags() -> sync($tags);
 
         $post -> save();
         return redirect() -> route('posts');
-
     }
 
 }
