@@ -11,8 +11,7 @@ use App\Tag;
 
 class GuestController extends Controller
 {
-    public function __construct()
-    {
+    public function __construct() {
         $this->middleware('auth');
     }
 
@@ -88,4 +87,13 @@ class GuestController extends Controller
         return redirect() -> route('posts');
     }
 
+    public function delete($id) {
+
+        $post = Post::findOrFail($id);
+        // empty tags to avoid foreignKey error
+        $post -> tags() -> sync([]);
+        $post -> delete();
+
+        return redirect() -> route('posts');
+    }
 }

@@ -140,12 +140,21 @@ main {
                 }
             }
 
-            .edit {
-                text-align: right;
-                button {
-                    min-width: 10ch;
-                    a {
-                        color: #F8FAFC;
+            .article-modification {
+                display: flex;
+                justify-content: flex-end;
+                flex-flow: row nowrap;
+                & > div {
+                    flex-shrink: 0;
+                    button {
+                        min-width: 7ch;
+                        width: 10ch;
+                        &:first-child {
+                            margin-right: 1rem;
+                        }
+                        a {
+                            color: #F8FAFC;
+                        }
                     }
                 }
             }

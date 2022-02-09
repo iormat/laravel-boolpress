@@ -11099,15 +11099,26 @@ main #posts .post .article-body img {
   margin-bottom: 2em;
 }
 
-main #posts .post .edit {
-  text-align: right;
+main #posts .post .article-modification {
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: row nowrap;
 }
 
-main #posts .post .edit button {
-  min-width: 10ch;
+main #posts .post .article-modification > div {
+  flex-shrink: 0;
 }
 
-main #posts .post .edit button a {
+main #posts .post .article-modification > div button {
+  min-width: 7ch;
+  width: 10ch;
+}
+
+main #posts .post .article-modification > div button:first-child {
+  margin-right: 1rem;
+}
+
+main #posts .post .article-modification > div button a {
   color: #F8FAFC;
 }
 

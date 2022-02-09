@@ -46,11 +46,19 @@
                                 {{$tag -> tag_name}}
                             @endforeach
                         </p>
-                    </div>
-                    <div class="edit">
-                        <button class="btn btn-secondary">
-                            <a href="{{ route('edit', $post -> id) }}">Edit</a>
-                        </button>
+
+                        <div class="article-modification">
+                            <div class="edit">
+                                <button class="btn btn-secondary">
+                                    <a href="{{ route('edit', $post -> id) }}">Edit</a>
+                                </button>
+                            </div>
+                            <div class="delete">
+                                <button class="btn btn-danger">
+                                    <a href="{{ route('delete', $post -> id) }}">Delete</a>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </article>
             @endforeach
